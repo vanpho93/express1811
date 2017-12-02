@@ -1,6 +1,8 @@
 const express = require('express');
+const reload = require('reload');
 
 const app = express();
+reload(app);
 app.set('view engine', 'ejs');
 
 app.use(express.static('./public'))
