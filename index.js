@@ -1,9 +1,13 @@
 const express = require('express');
 
 const app = express();
+app.set('view engine', 'ejs');
+
+app.use(express.static('./public'))
 
 app.get('/', (req, res) => {
-    res.send('<h1>Hello</h1>');
+    // res.sendFile(__dirname + '/index.html');
+    res.render('a');
 });
 
 app.get('/chao/:name', (req, res) => {
